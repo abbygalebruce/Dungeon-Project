@@ -1419,9 +1419,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 144969931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c00a8295bfe7f40a75d2edc9981584, type: 3}
+  m_Script: {fileID: 11500000, guid: 5363cb0989f2f674f842362a1dae18ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
+  gateAnimator: {fileID: 0}
 --- !u!1001 &149372511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3812,6 +3813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.6094038
@@ -3861,11 +3866,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1969306782}
+      insertIndex: 3
+      addedObject: {fileID: 1969306793}
     - targetCorrespondingSourceObject: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1969306787}
+    - targetCorrespondingSourceObject: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1969306792}
   m_SourcePrefab: {fileID: 100100000, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
 --- !u!1001 &436025368
 PrefabInstance:
@@ -11884,11 +11892,15 @@ PrefabInstance:
     - target: {fileID: 7301651544876975424, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 1969306782}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7301651544876975424, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2024850862279702677, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1887291038}
   m_SourcePrefab: {fileID: 100100000, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
 --- !u!1001 &1539691549
 PrefabInstance:
@@ -14636,6 +14648,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.000001, y: 0, z: 4.000001}
   m_Center: {x: 2.0000005, y: 0, z: -2.0000005}
+--- !u!1 &1887291033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2024850862279702677, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
+  m_PrefabInstance: {fileID: 1537813135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1887291038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887291033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3d562bda6438941aaf46d14336d6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyScript
+  floatAmount: 0.5
+  floatSpeed: 1
+  rotationSpeed: 50
+  player: {fileID: 0}
 --- !u!1001 &1897955825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61619,18 +61652,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
   m_PrefabInstance: {fileID: 418855089}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1969306782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969306777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c00a8295bfe7f40a75d2edc9981584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorScript
 --- !u!95 &1969306787
 Animator:
   serializedVersion: 7
@@ -61653,6 +61674,40 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1969306792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969306777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5363cb0989f2f674f842362a1dae18ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JailDoorScript
+  gateAnimator: {fileID: 1969306787}
+--- !u!65 &1969306793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969306777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.0000024, y: 3.1751027, z: 0.16653197}
+  m_Center: {x: -0.00000047683713, y: 1.5442393, z: 0.0032656824}
 --- !u!1001 &1982017668
 PrefabInstance:
   m_ObjectHideFlags: 0
