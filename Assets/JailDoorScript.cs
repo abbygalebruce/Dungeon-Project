@@ -2,34 +2,34 @@ using UnityEngine;
 
 public class JailDoorScript : MonoBehaviour
 {
-    // 1. Keep variables at the top, outside of methods
-    public Animator gateAnimator;
-    private bool isPlayerNearby = false;
+   
+    private Animator doorAnimator;
+    private bool isOpened = false;
 
-    // 2. The Update method handles the button press
-    void Update()
+    void Start()
     {
-        // Access the static variable directly from the DungeonKey class
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && JailKeyScript.HasKey)
+        doorAnimator = GetComponent<Animator>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Pressed E! Key status: " + JailKeyScript.HasKey); // Check this in the console
-            if (JailKeyScript.HasKey)
+            // Checking the 'hasKey' variable from your JailKeyScript
+            if (JailKeyScript.hasKey && !isOpened)
             {
-                gateAnimator.SetTrigger("OpenGate");
+                // This MUST match the Trigger name in your Animator Parameters tab
+                doorAnimator.SetTrigger("LockedJailDoor"); 
+                isOpened = true;
+                Debug.Log("Success: Jail Door is rolling up!");
+            }
+            else if (!JailKeyScript.hasKey)
+            {
+                Debug.Log("Action Failed: You still need the Jail Key!");
             }
         }
     }
-
-    // 3. Trigger methods handle the player walking in/out of range
-    private void OnTriggerEnter(Collider other) 
-    { 
-        if (other.CompareTag("Player")) isPlayerNearby = true; 
-    }
-
-    private void OnTriggerExit(Collider other) 
-    { 
-        if (other.CompareTag("Player")) isPlayerNearby = false; 
-    }
+}
 
     //[SerializeField] Animator anim;
     //public void Unlock(){
@@ -37,5 +37,4 @@ public class JailDoorScript : MonoBehaviour
           //   anim.SetTrigger("JailDoorScript");
     //}
     
-}
 

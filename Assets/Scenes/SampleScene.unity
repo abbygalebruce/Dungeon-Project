@@ -1422,7 +1422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5363cb0989f2f674f842362a1dae18ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  gateAnimator: {fileID: 0}
 --- !u!1001 &149372511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11831,7 +11830,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024850862279702677, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
       propertyPath: m_Name
-      value: Key
+      value: JailKey
       objectReference: {fileID: 0}
     - target: {fileID: 2825499457416177608, guid: 6f76e9f115f295b488efe940b5701aed, type: 3}
       propertyPath: m_Size.x
@@ -14665,10 +14664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3d562bda6438941aaf46d14336d6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyScript
-  floatAmount: 0.5
-  floatSpeed: 1
-  rotationSpeed: 50
-  player: {fileID: 0}
 --- !u!1001 &1897955825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61686,7 +61681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5363cb0989f2f674f842362a1dae18ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JailDoorScript
-  gateAnimator: {fileID: 1969306787}
 --- !u!65 &1969306793
 BoxCollider:
   m_ObjectHideFlags: 0

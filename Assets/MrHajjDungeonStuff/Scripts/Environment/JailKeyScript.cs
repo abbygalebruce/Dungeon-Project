@@ -1,22 +1,20 @@
 using UnityEngine;
 
-public class JailKeyScript : PickupBase
+public class JailKeyScript : MonoBehaviour
 {
-    public static bool HasKey = false;
+    // MUST be 'public static' and spelled exactly this way
+    public static bool hasKey = false; 
 
-    protected new void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            HasKey = true; // Set the global variable
-            Debug.Log("Key Collected!");
+            hasKey = true;
+            Debug.Log("Collected Jail Key!");
             Destroy(gameObject);
         }
     }
-
-
-
-
+}
 
 
 
@@ -26,4 +24,3 @@ public class JailKeyScript : PickupBase
    //     base.PickupEffect();
    //     JailDoor.Unlock();
   //  }
-}
