@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [Range(0.1f, 12f)]public float lookSens = 2.0f;
     private GameObject player;
     private float rotationX = 0;
-    private float rotationY = 0;
+    private float rotationY = 180;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

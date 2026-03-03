@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Door
   - JailDoor
+  - ArrowAvoid
+  - Wall
   layers:
   - Default
   - TransparentFX

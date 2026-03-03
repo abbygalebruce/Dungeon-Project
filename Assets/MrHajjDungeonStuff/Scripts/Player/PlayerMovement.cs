@@ -54,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
         sprint = InputSystem.actions.FindAction("Sprint");
     }
 
+    private void OnEnable(){
+        transform.rotation = Quaternion.Euler(this.transform.rotation.x, 180, this.transform.rotation.z);
+    }
+
     private void FixedUpdate()
     {
         rb.linearDamping = grounded ? 6f : 0f;
@@ -75,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.GetComponent<PressurePlate>() != null)
         {
             grounded = true;
         }
@@ -83,13 +87,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.GetComponent<PressurePlate>() != null)
             grounded = true;
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.GetComponent<PressurePlate>() != null)
             grounded = false;
     }
 

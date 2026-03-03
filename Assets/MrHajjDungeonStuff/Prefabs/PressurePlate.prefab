@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3906141379256773073}
   m_Layer: 0
   m_Name: PressurePlate
-  m_TagString: Untagged
+  m_TagString: ArrowAvoid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 400887444974207186}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

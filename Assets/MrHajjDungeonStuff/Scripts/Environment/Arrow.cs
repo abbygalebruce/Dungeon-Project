@@ -25,7 +25,8 @@ public class Arrow : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other){
-        if(!other.gameObject.CompareTag("ArrowTrap")){
+        Debug.Log(other.gameObject);
+        if(!other.gameObject.CompareTag("ArrowTrap") && !other.gameObject.CompareTag("ArrowAvoid")){
             if(other.gameObject.CompareTag("Player")){
                 other.GetComponent<HealthManager>().TakeDamage(damage);
             }
